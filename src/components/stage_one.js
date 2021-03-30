@@ -10,9 +10,26 @@ import { MyContext } from '../context';
 const StageOne = () => {
     const context = useContext(MyContext);
 
-    console.log(context)
+    const renderPlayers = () =>(
+        context.state.players.map((item, idx)=>(
+            <ListItem
+                key={idx}
+                bottomDivider
+                style={{width:'100%'}}
+            >
+                <ListItem.Chevron/>
+                <ListItem.Content>
+                    <Text>{item}</Text>
+
+                </ListItem.Content>
+
+            </ListItem>
+
+        ))
+    )
 
     return(
+        <>
         <Formik
             initialValues={{player:''}}
             validationSchema={Yup.object({
@@ -23,7 +40,8 @@ const StageOne = () => {
 
             })}
             onSubmit={(values, {resetForm})=>{
-                alert(values)
+                context.addPlayer(values.player)
+                resetForm();
 
             }}
 
@@ -58,6 +76,19 @@ const StageOne = () => {
                 </>    
             )}
         </Formik>
+        <View style={{padding:20, width:'100%'}}>
+             {
+                 context.state.players && context.state.players.length > 0 ?
+                    <>
+                    <Text>List of Players</Text>
+                    {renderPlayers()}
+                    </>
+                 :null
+             }           
+
+        </View>
+
+        </>
     )
 }
 
