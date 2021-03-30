@@ -61,4 +61,13 @@ const StageOne = () => {
     )
 }
 
+const styles = StyleSheet.create({
+    button:{
+        backgroundColor:'#DB3EB1',
+        marginTop:20
+    }
+
+})
+
+
 export default StageOne;
