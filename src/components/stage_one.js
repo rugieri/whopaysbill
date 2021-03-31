@@ -16,10 +16,12 @@ const StageOne = () => {
                 key={idx}
                 bottomDivider
                 style={{width:'100%'}}
+                onLongPress={()=>context.removePlayer(idx)}
+                
             >
                 <ListItem.Chevron/>
                 <ListItem.Content>
-                    <Text>{item}</Text>
+                    <ListItem.Title>{item}</ListItem.Title>
 
                 </ListItem.Content>
 
@@ -82,6 +84,11 @@ const StageOne = () => {
                     <>
                     <Text>List of Players</Text>
                     {renderPlayers()}
+                    <Button
+                        buttonStyle={styles.button}
+                        title="Get the looser"
+                        onPress={()=> context.next()}
+                    />   
                     </>
                  :null
              }           
