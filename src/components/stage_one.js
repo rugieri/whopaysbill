@@ -50,7 +50,11 @@ const StageOne = () => {
         >    
             {({ handleChange, handleBlur, handleSubmit,values,touched,errors})=>(
                 <>
-                    <Text>Who pays the Bill</Text>
+                    <Text
+                        style={{
+                            fontFamily:'Pacifico-Regular'
+                        }}
+                    >Who pays the Bill</Text>
                     <Input
                         placeholder='Add names here'
                         leftIcon={{type:'antdesign', name:'adduser'}}
