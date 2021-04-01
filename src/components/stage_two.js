@@ -2,11 +2,13 @@ import React, {useContext} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { MyContext } from '../context';
+import { MainLogo } from '../utils/tools'
 const StageTwo = () => {
     const context = useContext(MyContext);
     return(
         <>
-            <Text>Who will pay the bill is</Text>
+            <MainLogo/>
+            <Text>The Loser is</Text>
             <Text style={{marginTop:30, fontSize:30}}>{context.state.result}</Text>
             <Button
                 buttonStyle={styles.button}
