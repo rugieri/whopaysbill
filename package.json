@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@expo-google-fonts/pacifico": "^0.1.0",
+    "ansi-regex": "5.0.1",
     "browserslist": "4.16.5",
     "expo": "~40.0.0",
     "expo-splash-screen": "~0.8.0",
